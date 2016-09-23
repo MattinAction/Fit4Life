@@ -1,0 +1,626 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      /*Body*/
+      body{
+        background-color: #2E8B57;
+      }
+
+      #mainScreen{
+        /*Dimension*/
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      /*Heading*/
+      #dayDate {
+        /*Dimension*/
+        width: 50%;
+        height: 100px;
+
+        /*Postion*/
+        position:absolute;
+        left: 0px;
+        top: 0px;
+
+        /*Color*/
+        background-color: #A9A9A9;
+
+        /*Text*/
+        text-align: center;
+        font-size: 70px;
+      }
+
+      #userName {
+        /*Dimension*/
+        width: 50%;
+        height: 100px;
+
+        /*Position*/
+        position: absolute;
+        right: 0px;
+        top: 0px;
+
+        /*Color*/
+        background-color: #A9A9A9;
+
+        /*Text*/
+        text-align: center;
+        font-size: 70px;
+      }
+
+      /*Main Body*/
+      #programName {
+        /*Dimension*/
+        width: 100%;
+        height: 100px;
+
+        /*Position*/
+        position: absolute;
+        top: 100px;
+        left: 0%;
+
+        /*Color*/
+        background-color: #C0C0C0;
+
+        /*Text*/
+        text-align: center;
+        font-size: 70px;
+      }
+
+      #xfitButton {
+        /*Dimension*/
+        width: 80%;
+        height: 150px;
+
+        /*Position*/
+        position: absolute;
+        left: 10%;
+        top: 20%;
+
+        /*Text*/
+        text-align: center;
+        font-size: 70px;
+
+      }
+
+      #strengthButton {
+        /*Dimension*/
+        width: 80%;
+        height: 150px;
+
+        /*Postiion*/
+        position: absolute;
+        left: 10%;
+        top: 45%;
+
+        /*Text*/
+        text-align: center;
+        font-size: 70px;
+
+      }
+
+      #weightLossButton {
+        /*Dimension*/
+        width: 80%;
+        height: 150px;
+
+        /*Postion*/
+        position: absolute;
+        left: 10%;
+        top: 70%;
+
+        /*Text*/
+        text-align: center;
+        font-size: 70px;
+
+      }
+
+      #logOutButton {
+       /*Dimension*/
+       width: 40%;
+       height: 150px;
+
+       /*Position*/
+       position: absolute;
+       left: 0%;
+       bottom: 0px;
+
+       /*Text*/
+       text-align: center;
+       font-size: 70px;
+
+       /*Color*/
+       background-color: #B0C4DE;
+      }
+
+      #backToMainBtn {
+       /*Dimension*/
+       width: 40%;
+       height: 150px;
+
+       /*Position*/
+       position: absolute;
+       right: 0%;
+       bottom: 0px;
+
+       /*Text*/
+       text-align: center;
+       font-size: 70px;
+
+       /*Color*/
+       background-color: #B0C4DE;
+      }
+
+      /*Login Screen*/
+      #loginScreen {
+        /*Dimension*/
+        width: 90%;
+        height: 500px;
+
+        /*Position*/
+        position: absolute;
+        z-index: 1;
+        top: 25%;
+        left: 5%;
+
+        /*Coloring*/
+        background-color: #AFEEEE;
+
+        /*Text*/
+        text-align: left;
+        font-size: 70px;
+
+        /*Display*/
+        display: none;
+      }
+
+      #loginButton {
+        /*Dimension*/
+        width: 40%;
+        height: 30%;
+
+        /*Position*/
+        position: absolute;
+        right: 0%;
+        bottom: 0%;
+
+        /*Text*/
+        text-align: center;
+        font-size: 70px;
+      }
+
+      #loginTB {
+        /*Dimension*/
+        width: 90%;
+        height: 20%;
+
+        /*Position*/
+        position: absolute;
+        left: 5%;
+        top: 30%;
+
+        /*Text*/
+        text-align: left;
+        font-size: 70px;
+      }
+
+      #enterUN {
+        /*Postion*/
+        position: absolute;
+        left: 5%;
+        top: 5%;
+      }
+
+      /*Workout View*/
+      #workout {
+        /*Dimensions*/
+        width: 90%;
+        height: 75%;
+        overflow-y: scroll;
+
+        /*Position*/
+        position: absolute;
+        top: 200px;
+        left: 5%;
+        z-index: 1;
+
+        /*Coloring*/
+        background-color: #F8F8FF;
+
+        /*Text*/
+        text-align: left;
+        font-size: 70px;
+
+        /*Display*/
+        display: none;
+      }
+
+      /*Workout Manager View*/
+      #workoutMan {
+        /*Dimensions*/
+        width: 90%;
+        height: 80%;
+
+        /*Position*/
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        z-index: 3;
+
+        /*Coloring*/
+        background-color: grey;
+
+        /*Text*/
+        text-align: left;
+        font-size: 70px;
+
+        /*Display*/
+        display: none;
+      }
+
+      #clearButton {
+        /*Dimension*/
+        height: 10%;
+        width: 33%;
+
+        /*Position*/
+        position: absolute;
+        bottom: 0%;
+        left :0%;
+
+        /*Text*/
+        text-align: center;
+        font-size: 70px;
+
+      }
+
+      #postButton {
+        /*Dimension*/
+        height: 10%;
+        width: 33%;
+
+        /*Position*/
+        position: absolute;
+        bottom: 0%;
+        left :33%;
+
+        /*Text*/
+        text-align: center;
+        font-size: 70px;
+
+      }
+
+      #addButton {
+        /*Dimension*/
+        height: 10%;
+        width: 34%;
+
+        /*Position*/
+        position: absolute;
+        bottom: 0%;
+        left :66%;
+
+        /*Text*/
+        text-align: center;
+        font-size: 70px;
+
+      }
+
+      #warmupMan {
+        /*Dimension*/
+        width: 100%;
+        height: 30%;
+
+        /*Position*/
+        position: absolute;
+        left: 0%;
+        top: 0%;
+
+        /*Coloring*/
+        background-color: blue;
+      }
+
+      #workoutMainMan {
+        /*Dimension*/
+        width: 100%;
+        height: 30%;
+
+        /*Position*/
+        position: absolute;
+        left: 0%;
+        top: 30%;
+
+        /*Coloring*/
+        background-color: yellow;
+      }
+
+      #cooldownMan {
+        /*Dimension*/
+        width: 100%;
+        height: 30%;
+
+        /*Position*/
+        position: absolute;
+        left: 0%;
+        top: 60%;
+
+        /*Coloring*/
+        background-color: green;
+      }
+
+      /*Add Excercise View*/
+      #addView {
+        display: none;
+      }
+
+      /*Add Superset View*/
+      #addSupersetView {
+        display: none;
+      }
+
+      button {
+        background-color: #B0C4DE;
+      }
+
+      td {
+        border-right-style: solid;
+        font-size: 50px;
+      }
+
+      th {
+        border-bottom-style: solid;
+      }
+
+    </style>
+
+    <script type="text/javascript">
+
+      var loginID = null;
+
+      function xfitBtnPress(){
+        console.log("Start xfitBtnPress");
+        document.getElementById("workout").style.display = "block";
+        event.stopPropagation();
+        document.getElementById("programName").innerHTML = "CrossFit";
+        console.log("Complete");
+      }
+
+      function strengthBtnPress(){
+        console.log("Start strengthBtnPress");
+        document.getElementById("workout").style.display = "block";
+        event.stopPropagation();
+        document.getElementById("programName").innerHTML = "Strength Training";
+        console.log("Complete");
+      }
+
+      function weightLossBtnPress(){
+        console.log("Start weightLossBtnPress");
+        document.getElementById("workout").style.display = "block";
+        event.stopPropagation();
+        document.getElementById("programName").innerHTML = "Weight Loss"
+        console.log("Complete");
+      }
+
+      function backtoMain(){
+        console.log("Start backtoMain");
+        document.getElementById("workout").style.display = "none";
+        document.getElementById("programName").innerHTML = "Select a Program"
+        console.log("Complete");
+      }
+
+      // Any touches to the workout window need to be stopped.
+      function stopProp(){
+        event.stopPropagation();
+      }
+
+      //The series of functions that get called when the webApp loads
+      function startingUp(){
+        getWeekday();
+        logOut();
+      }
+
+      // Used to get the day of the week and display it in top left
+      function getWeekday(){
+        console.log("Start getWeekday");
+        var d = new Date();
+        var weekday = new Array(7);
+        weekday[0] = "Sunday";
+        weekday[1] = "Monday";
+        weekday[2] = "Tuesday";
+        weekday[3] = "Wednesday";
+        weekday[4] = "Thursday";
+        weekday[5] = "Friday";
+        weekday[6] = "Saturday";
+        var n = weekday[d.getDay()];
+        document.getElementById("dayDate").innerHTML = n;
+      }
+
+      // Used to pull up the loginScreen on loading of the webApp
+      function logOut() {
+        document.getElementById("loginScreen").style.display = "block";
+        document.getElementById("loginTB").value = "U/N";
+        event.stopPropagation();
+      }
+
+      // The user clicks the login button
+      function logIn(){
+        if (document.getElementById("loginTB").value == "U/N") {
+          window.alert("Please enter in a valid ID.")
+        } else{
+          loginID = document.getElementById("loginTB").value;
+          document.getElementById("userName").innerHTML = loginID;
+          document.getElementById("loginScreen").style.display = "none";
+        }
+      }
+
+      function clearEntry(){
+        document.getElementById("loginTB").value = "";
+      }
+    </script>
+
+    <title>Fit4Life</title>
+  </head>
+  <body onload="startingUp()">
+    <!-- Used to show day of the week, the date and username -->
+    <div id="dayDate">Day</div>
+    <div id="userName">Username</div>
+
+    <!-- Used to display the program once it is selected from the main screen,
+    and it is hidden on load -->
+    <div id="programName">Select a Program</div>
+
+    <!-- Main screen and shows the three main options -->
+    <div id="mainScreen" ontouchstart = "backtoMain()">
+        <button type="button" id="xfitButton" ontouchstart="xfitBtnPress()">Crossfit</button>
+        <button type="button" id="strengthButton" ontouchstart="strengthBtnPress()">Strength</button>
+        <button type="button" id="weightLossButton" ontouchstart="weightLossBtnPress()">Weight Loss</button>
+        <button type="button" id="logOutButton">Log Out</button>
+        <button type="button" id="backToMainBtn" ontouchstart="backtoMain()">To Main</button>
+
+
+      <!-- Login screen, pulls up on load -->
+      <div id="loginScreen">
+        <div id="enterUN">Enter Username:</div>
+        <input type="text" name="login" id="loginTB" onTouchStart="stopProp(), clearEntry()"><br>
+        <button type="button" id="loginButton" ontouchstart = "logIn()">Login</button>
+      </div>
+
+      <!-- User's View -->
+      <!-- Here is where the xfit workout will show once the user selects the xfit option
+      Objective: see how to use xml or backend programming to change between xfit, strength
+      or weight loss-->
+      <div id="workout" class="workout" ontouchstart = "stopProp()">
+        <table style="width:100%">
+          <tr>
+            <th>Exercise</th>
+            <th>Sets</th>
+            <th>Reps</th>
+            <th>SS</th>
+          </tr>
+          <tr>
+            <td>Stairmaster</td>
+            <td>5 mins</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Goblet Squat</td>
+            <td>2</td>
+            <td>10</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Frog Stretch</td>
+            <td>2</td>
+            <td>15 secs</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Back Squat</td>
+            <td>3</td>
+            <td>6-8</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Romainian Deadlifts</td>
+            <td>4</td>
+            <td>5</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Single Leg Press</td>
+            <td>3</td>
+            <td>5</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Yoga Ball Leg Curls</td>
+            <td>3</td>
+            <td>8</td>
+            <td>Y</td>
+          </tr>
+          <tr>
+            <td>Leg Extensions</td>
+            <td>3</td>
+            <td>8</td>
+            <td>Y</td>
+          </tr>
+          <tr>
+            <td>Weighted Lunges</td>
+            <td>3</td>
+            <td>10</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Calf Raises</td>
+            <td>3</td>
+            <td>10</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Planks</td>
+            <td>3</td>
+            <td>1 min</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Back Scratches</td>
+            <td>3</td>
+            <td>20</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Reverse Crunches</td>
+            <td>3</td>
+            <td>10</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Stretches</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+      </div>
+
+
+      <!-- Trainer's View -->
+      <!-- Here is where the manager xfit workout will show once the user selects the xfit option
+      Objective: see how to use xml or backend programming to change between xfit, strenghth
+      or weight loss-->
+      <div id="workoutMan" class="workout">
+        <div id="warmupMan">Here is where the warmup will be displayed</div>
+        <div id="workoutMainMan">Here is where the main portion of the workout will be displayed</div>
+        <div id="cooldownMan">Here is where the cooldown will be displayed</div>
+        <button type="button" id="clearButton">Clear</button>
+        <button type="button" id="postButton">Post</button>
+        <button type="button" id="addButton">Add</button>
+      </div>
+
+      <!-- Add view
+      Objective: use xml or backend programming to add the correct workout to the
+      correct section. Also, I will need to figure out a way to specify warmup,
+      workout and cooldown-->
+      <div id="addView">
+        Exercise: <input type="text" name="exercise"><br>
+        <button type="button" id="addExerciseButton">Add</button>
+        <button type="button" id="addSupersetButton">Add Superset</button>
+        <button type="button" id="closeButton">Close</button>
+      </div>
+
+      <!-- Add Superset view
+      Objective: I wil need to figure out how supersets will show once they are
+      added.-->
+      <div id="addSupersetView">
+        <div id="supersetDisplay"></div>
+        Add Exercise: <input type="text" name="supersetExercise"><br>
+        <button type="button" id="addExtoSuperset">Add</button>
+        <button type="button" id="closeSuperset">Close</button>
+      </div>
+    </div>
+  </body>
+</html>

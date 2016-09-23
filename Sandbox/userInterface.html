@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>User Interface</title>
+    <meta charset="utf-8">
+    <style>
+      body{
+        background-color: #2F4F4F;
+        overflow: hidden;
+      }
+      /*Heading Formatting*/
+      #dayOfWeek {
+        /*Dimension*/
+          width: 50%;
+          height: 100px;
+
+        /*Postion*/
+          position:absolute;
+          left: 0px;
+          top: 0px;
+
+        /*Color*/
+          background-color: #A9A9A9;
+
+        /*Text*/
+          text-align: center;
+          font-size: 70px;
+      }
+      #banner {
+        /*Dimension*/
+          width: 50%;
+          height: 100px;
+
+        /*Position*/
+          position: absolute;
+          right: 0px;
+          top: 0px;
+
+        /*Color*/
+          background-color: #A9A9A9;
+
+        /*Text*/
+          text-align: center;
+          font-size: 70px;
+        }
+      /*Program Buttons*/
+      #crossfitButton{
+        /*Dimensions*/
+          height: 200px;
+          width: 33%;
+
+        /*Position*/
+          position: absolute;
+          left: 0%;
+          bottom: 0%;
+
+        /*Color*/
+          background-color: #C0C0C0;
+
+        /*Text*/
+          text-align: center;
+          font-size: 70px;
+      }
+      #strengthButton{
+        /*Dimensions*/
+          height: 200px;
+          width: 34%;
+
+        /*Position*/
+          position: absolute;
+          left: 33%;
+          bottom: 0px;
+
+        /*Color*/
+          background-color: #C0C0C0;
+
+        /*Text*/
+          text-align: center;
+          font-size: 70px;
+      }
+      #weightLossButton{
+        /*Dimensions*/
+          height: 200px;
+          width: 33%;
+
+        /*Position*/
+          position: absolute;
+          right: 0px;
+          bottom: 0px;
+
+        /*Color*/
+          background-color: #C0C0C0;
+
+        /*Text*/
+          text-align: center;
+          font-size: 70px;
+      }
+      /*Workout displays*/
+      .workout{
+          /*Dimensions*/
+            width: 90%;
+            height: 77%;
+
+          /*Color*/
+            background-color: #87CEFA;
+
+          /*Text*/
+            text-align: center;
+            font-size: 70px;
+      }
+      #crossfitWorkout{
+        /*Position*/
+          position: absolute;
+          top: 150px;
+          transition: left .5s;
+      }
+      #strengthWorkout{
+        /*Position*/
+          position: absolute;
+          top: 150px;
+          transition: left .5s;
+      }
+      #weightLossWorkout{
+        /*Position*/
+          position: absolute;
+          top: 150px;
+          transition: left .5s;
+      }
+    </style>
+    <script>
+      function startup(){
+        var program = localStorage.getItem("programName");
+
+        if (program == "strength"){
+          document.getElementById("strengthWorkout").style.left = "5%";
+          document.getElementById("crossfitWorkout").style.left = "-105%";
+          document.getElementById("weightLossWorkout").style.left = "-105%";
+        } else if (program == "weightLoss"){
+          document.getElementById("strengthWorkout").style.left = "-105%";
+          document.getElementById("crossfitWorkout").style.left = "-105%";
+          document.getElementById("weightLossWorkout").style.left = "5%";
+        } else {
+          document.getElementById("strengthWorkout").style.left = "-105%";
+          document.getElementById("crossfitWorkout").style.left = "5%";
+          document.getElementById("weightLossWorkout").style.left = "-105%";
+        }
+      }
+      function strengthEnter(){
+        var strength = document.getElementById("strengthWorkout");
+        var crossfit = document.getElementById("crossfitWorkout");
+        var weightLoss = document.getElementById("weightLossWorkout");
+
+        if (strength.style.left == "5%"){
+        } else{
+          strength.style.left = "5%";
+          crossfit.style.left = "-105%";
+          weightLoss.style.left = "-105%";
+          localStorage.setItem("programName", "strength");
+        }
+      }
+      function crossfitEnter(){
+        var strength = document.getElementById("strengthWorkout");
+        var crossfit = document.getElementById("crossfitWorkout");
+        var weightLoss = document.getElementById("weightLossWorkout");
+
+        if (crossfit.style.left == "5%"){
+        } else{
+          strength.style.left = "-105%";
+          crossfit.style.left = "5%";
+          weightLoss.style.left = "-105%";
+          localStorage.setItem("programName", "crossfit");
+        }
+      }
+      function weightLossEnter(){
+        var strength = document.getElementById("strengthWorkout");
+        var crossfit = document.getElementById("crossfitWorkout");
+        var weightLoss = document.getElementById("weightLossWorkout");
+
+        if (weightLoss.style.left == "5%"){
+        } else{
+          strength.style.left = "-105%";
+          crossfit.style.left = "-105%";
+          weightLoss.style.left = "5%";
+          localStorage.setItem("programName", "weightLoss");
+        }
+      }
+    </script>
+  </head>
+  <body onload="startup()">
+    <div id="dayOfWeek">Day of Week</div>
+    <div id="banner">Fit4Life</div>
+
+    <div id="crossfitWorkout" class="workout">Crossfit Workout</div>
+    <div id="strengthWorkout" class="workout">Strength Training Workout</div>
+    <div id="weightLossWorkout" class="workout">Weight Loss Workout</div>
+
+    <button type="button" id="crossfitButton" ontouchstart="crossfitEnter()"><img src="reebokCrossfitLogo.png" alt="Reebok Crossfit Logo" height="100%" width="100%"></button>
+    <button type="button" id="strengthButton" ontouchstart="strengthEnter()"><img src="strengthLogo.png" alt="Bending Barbell Logo" height="100%" width="90%"></button>
+    <button type="button" id="weightLossButton" ontouchstart="weightLossEnter()"><img src="weightLossLogo.png" alt="Weight Loss Logo" height="100%" width="80%"></button>
+  </body>
+</html>
