@@ -22,6 +22,7 @@
  Testing Strategy: My testing strategy has two main components. First, I am separating out each component of the application in their own sandbox code. This will allow me to test out each component without having problems from the other components interfering with the component that I am currently testing. Second, after the application becomes functional, I will personally test the use of the application as I go through this round of Fit4Life for the semester. This testing phase will last for 3 weeks while I am doing the polish phase of the application.
 
  Grading:
+
 A: An “A” level effort will result in a completed web application with the full use of the Google Sheets CMS that can be updated by the Exercise Physiology department as they are working through the course of their program. The application will be presented to the Fit4Life administration and it will also match the Fit4Life brand. It will be complete to ensure a relatively light implementation cycle for the BYUI IT department.
 
 B: Styling of the application does not quite match the Fit4Life brand, but the meeting is still prepared to present the application to the Fit4Life leadership.
