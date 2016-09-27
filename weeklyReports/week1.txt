@@ -1,0 +1,10 @@
+Report: Week 1
+
+ Given that this was the first official week of the project, the goal that I had for the semester was simply get the basic structure of the webApp running. Even though I have been working on this application through the course of the 7 week break, there was not a lot to show. Most of my time was spent trying to develop the backend. Originally I had the plan to have a formal mySQL database and then develop a CMS application that could be used by the Exercise Phys team to keep the program flowing through the weeks. I found this very difficult for me because I had to change my thought process from “What would be easiest for me?” to “What would be easiest for the client?” This thought process took a little adjusting on my end, but after discussing the problem with Jacob Holman (mentor) informed me that using Google Sheets would be a simple way to operate the backend of the application. After running this by Joseph Williams (mentor / project owner) he gave the opinion that if a business owner doesn’t know how to operate a simple spreadsheet application, then they should be in business. I will check that off the list as a success.
+
+ After meeting with Brother Barney (mentor), we discussed that my GUI needed to be revised to help optimize how the applications runs. Instead of having a “Home” screen with three buttons on it, have the most popular program already pulled up when the user opens the application. My main goals for this coming week are:
+Continue polishing XMLHTTPRequest so that it is usable. This also includes placing the information in LocalStorage so the user won’t have to keep re-pulling the data from the server.
+Develop a sandbox instance of the GUI for the application. 
+
+ The reason why I say sandboxing vs completing is to ensure that the GUI on its own is functioning smoothly before I combine it together. I view this as reviewing my ingredients for quality before combining them into a dish.
+
