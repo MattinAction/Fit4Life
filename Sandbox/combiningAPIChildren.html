@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>API and Children</title>
+    <meta charset="utf-8">
+
+    <style>
+      #crossFit{
+        width: 250px;
+        height: 400px;
+        background-color: grey;
+
+        position: absolute;
+        top: 0px;
+        left: 0px;
+      }
+
+      #weightLoss{
+        width: 250px;
+        height: 400px;
+        background-color: grey;
+
+        position: absolute;
+        top: 0px;
+        left: 300px;
+      }
+
+      #strengthTraining{
+        width: 250px;
+        height: 400px;
+        background-color: grey;
+
+        position: absolute;
+        top: 0px;
+        left: 600px;
+      }
+
+      #crossFitButton{
+        position: absolute;
+        top: 400px;
+        left: 0px;
+      }
+
+      #weightLossButton{
+        position: absolute;
+        top: 400px;
+        left: 300px;
+      }
+
+      #strengthTrainingButton{
+        position: absolute;
+        top: 400px;
+        left: 600px;
+      }
+    </style>
+
+    <script>
+
+    function getRequest(){
+      //Key is the unique identifier to the crossfit Google sheet
+      var key = "14TxdxbJzsEoaCME1AOHAwjvYtP_G69t49RpvkSvAj2g";
+
+      /* day is the hard coded data that I am using for this sandbox in the
+      *  final product it will be a parameter that is passed to the function
+      */
+      var day = "Tuesday";
+
+      // Combined generic URL witht the unique spreadsheet key
+      var url = "https://spreadsheets.google.com/feeds/list/" + key + "/od6/public/values?alt=json";
+      // Workout array placed here as to not limit scope.
+      var workout = new Array;
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          data = JSON.parse(this.responseText);
+
+          var length = (data['feed']['entry'].length);
+
+          for (var i = 0; i < length; i++){
+                if ((data['feed']['entry'][i]['gsx$day']['$t']) == day){
+                    var exerciseName = data['feed']['entry'][i]['gsx$exercisename']['$t'];
+                    var sets = data['feed']['entry'][i]['gsx$sets']['$t'];
+                    var reps = data['feed']['entry'][i]['gsx$reps']['$t'];
+                    var superSet = data['feed']['entry'][i]['gsx$superset']['$t'];
+
+                    var exercise = [exerciseName, sets, reps, superSet];
+
+                    workout.push(exercise);
+                }
+            }
+          }
+
+          // Converts the completed workout array into a JSON string and
+          // prepare it to be put into localStorage
+          var myString = JSON.stringify(workout);
+          // Placing the JSON string into local storage
+          localStorage.setItem("crossfit",myString);
+          console.log(localStorage.getItem("crossfit"));
+
+          var placeHere = document.getElementById('crossFit');
+
+          var length = workout.length;
+
+          for (var i = 0; i < length; i++){
+            var set
+            var rep
+            var name = workout[i][0];
+            var superset
+
+            // Setting the set field
+            if (workout[i][1] == "N/A"){
+              set = "";
+            } else{
+              set = workout[i][1] + " X ";
+            }
+
+            // Setting the superset field
+            if (workout[i][3] == "TRUE"){
+              superset = "**"
+            } else{
+              superset = ""
+            }
+
+            // Setting the rep Setting
+            if (workout[i][2] == "N/A"){
+              rep = "";
+            } else{
+              rep = workout[i][2] + " reps of ";
+            }
+
+            // Setting the name field
+            var divHolder = document.createElement("div");
+            divHolder.innerHTML =  superset + set + rep + name;
+            placeHere.appendChild(divHolder);
+          }
+
+      };
+
+      xhttp.open("GET", url, true);
+      xhttp.send();
+    }
+
+    </script>
+  </head>
+  <body>
+    <div id="crossFit"></div>
+    <div id="weightLoss"></div>
+    <div id="strengthTraining"></div>
+    <button type="button" id="crossFitButton" onclick="getRequest()">Crossfit</button>
+    <button type="button" id="weightLossButton">Weight Loss</button>
+    <button type="button" id="strengthTrainingButton">Strength Training</button>
+  </body>
+</html>
