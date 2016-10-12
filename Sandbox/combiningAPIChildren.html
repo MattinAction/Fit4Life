@@ -9,7 +9,7 @@
         width: 250px;
         height: 400px;
         background-color: grey;
-
+        overflow-y: scroll;
         position: absolute;
         top: 0px;
         left: 0px;
@@ -51,6 +51,38 @@
         position: absolute;
         top: 400px;
         left: 600px;
+      }
+
+      #setsDisplay{
+        width: 25%;
+        height: 30px;
+        background-color: blue;
+        text-align: left;
+        position: absolute;
+      }
+
+      #repsDisplay{
+        width: 25%;
+        height: 30px;
+        background-color: red;
+        text-align: center;
+        position: absolute;
+        left: 25%;
+      }
+
+      #workoutsDisplay{
+        width: 50%;
+        height: 30px;
+        text-align: center;
+        background-color: purple;
+        position: absolute;
+        right: 0px;
+      }
+
+      .display{
+        display: block;
+        width: 100%;
+        height: 30px;
       }
     </style>
 
@@ -112,7 +144,7 @@
             if (workout[i][1] == "N/A"){
               set = "";
             } else{
-              set = workout[i][1] + " X ";
+              set = workout[i][1];
             }
 
             // Setting the superset field
@@ -126,12 +158,13 @@
             if (workout[i][2] == "N/A"){
               rep = "";
             } else{
-              rep = workout[i][2] + " reps of ";
+              rep = workout[i][2];
             }
 
             // Setting the name field
             var divHolder = document.createElement("div");
-            divHolder.innerHTML =  superset + set + rep + name;
+            divHolder.className = "display";
+            divHolder.innerHTML =  "<div id=\"setsDisplay\">"+set+"</div><div id=\"repsDisplay\">"+rep+"</div><div id=\"workoutsDisplay\">"+superset+name+"</div>"
             placeHere.appendChild(divHolder);
           }
 
@@ -144,7 +177,13 @@
     </script>
   </head>
   <body>
-    <div id="crossFit"></div>
+    <div id="crossFit">
+      <div class="display">
+        <div id="setsDisplay">Sets</div>
+        <div id="repsDisplay">Reps</div>
+        <div id="workoutsDisplay">Workout Name</div>
+      </div>
+    </div>
     <div id="weightLoss"></div>
     <div id="strengthTraining"></div>
     <button type="button" id="crossFitButton" onclick="getRequest()">Crossfit</button>
