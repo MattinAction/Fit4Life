@@ -1,0 +1,4 @@
+  This week was rather slow. My main goal was to integrate both of the remaining workout panes for the exercises, but I ended up running into some snags on getting the Weight Loss pane pulling successfully from the Google Sheet and organizing in the pane. I was able to get everything figured out, but it means that in the upcoming week I’ll need to get the Strength Training pane successfully built out and then applying a general amount of polish to the CSS to make all three panes look acceptable.
+  For my meeting I met with Jacob Holman and he brought up the question of how I’m going to refactor my code once it is functioning. I think the biggest advantage of doing this will be setting up formulas that will take in the URLs as a constant set at the beginning of the code and then returns the JSON string.
+
+Hours this week: 6
