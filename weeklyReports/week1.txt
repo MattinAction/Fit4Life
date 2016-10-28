@@ -8,3 +8,4 @@ Develop a sandbox instance of the GUI for the application.
 
  The reason why I say sandboxing vs completing is to ensure that the GUI on its own is functioning smoothly before I combine it together. I view this as reviewing my ingredients for quality before combining them into a dish.
 
+Hours this Week: 30 (initial dump)
