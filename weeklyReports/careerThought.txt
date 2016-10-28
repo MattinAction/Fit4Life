@@ -1,0 +1,16 @@
+  Today in a meeting with Brother Godfrey, we were discussing the main points as to why I’m building this webApp. Even though it took a little bit of time to arrive at an answer, but these are what I was able to come up with for each of the aspects of the question “What is the purpose of me building this application?”; the superficial advantages, the short-run career advantages, the long-run career advantages.
+
+1) What are the superficial reasons for me developing this webApp?
+
+   The biggest advantage of this application that I would like to provide to the participants of the Fit4Life program the ability to view their workouts without having to mess with folders or PDF files that are accessed through the school’s Outlook Web Application that is, to put it politely, garbage when it is viewed on a mobile device. Then, of course, there’s the fulfilling of the Senior Project so I can graduate, but I digress. The final superficial advantage to me developing this webApp is I have found that the best way to apply a concept that was learned is by using it in a project that I am passionate about.
+
+2) How can this help start my career in my desired career path (software development)?
+
+   The initial kickstart of my career as a software developer is a task that I view as both daunting and terrifying. I have made some irregular educational choices while attending BYUI and I feel that developing the Fit4Life application will help fill in the holes that could be seen within my education. For example, because of my current employment situation, I was unable to complete an internship with a software company and many potential employers will view this as a LARGE red flag. But, with the technologies that I’ve put into this project as well as the habits that I’ll discuss in the last question, I can place those on my resume and show that even though I might not have completed a traditional internship, I still have developed skills that make me a valuable asset to their company.
+
+3) How can this project help springboard my career path in the long run?
+
+   To launch my career in the long run it would require a more subtle application which will end up being more powerful. As a software developer, an invaluable skill that one can have is the ability to identify problems. Now, I’m not meaning just seeing the problem, grumble about it, and then move on with their day, but the real advantage comes from being able to see the problem and then begin developing a solution to that problem. By developing this habit, I would be able to consistently have a decent roster of ideas to pull from.
+   Also, another habit that can be adapted from me building this project is the habit of keeping an eye on the current trends and news of technology and see what advancements can help me answer the problems that I am noticing.
+
+
