@@ -1,0 +1,5 @@
+  Ah, the adventures of CSS and Javascript. This week I finished the combining of the third API dump for the StrengthTraining Google Sheet. With this, I ran into an interesting issue. When I would pull the information into the container assigned for strength training, I would lose the top row that would also be my headers. After about two hours of troubleshooting, I discovered that I forgot to add in another layer of the container and it was getting covered over.
+  Once that dump was complete I pulled my odd colors that I was using for placing out of all the containers since it looked rather ridiculous. There is still a great deal that needs to take place as far as CSS is concerned, but I’m confident that the components are finally built out and now comes the fun part where I begin tying things in to each other.
+  As for a meeting this week, I was only able to have a brief meeting with Joseph Williams to go over the physical design of the API/Creating Children combination. He likes the idea so far, but he also agrees that a decent amount of polish will need to take place.
+
+Hours this week: 4
