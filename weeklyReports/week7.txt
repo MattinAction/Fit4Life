@@ -1,0 +1,5 @@
+Reporting: Week 7
+   I’ve come to discover that if code works fine in one environment, it doesn’t necessarily mean that it will function as expected once the components are combined. The goal that I had for this week was getting all of the separate windows combined together and functioning as one window. But unfortunately I learned fairly quickly that it would take much more effort than simply copying and pasting the code into a fresh document and then simply matching the names together. The rest of my week in coding ended up being stubbing out the code for my project and then preparing to get everything combined.
+   This week I met with Brother Godfrey mainly to address concerns with how I was coming along with the project. In this meeting we discussed some of the goals that this project will be meeting and then how they would be represented in my senior project presentation. After this meeting, I spent the remainder of my time starting this presentation.
+
+Hours: 10
